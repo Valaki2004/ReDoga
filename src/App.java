@@ -28,9 +28,7 @@ nevjegy();
 System.out.println("Jelszavak");
 System.out.println("Verzió: 0.0.1");
 
-
 Scanner sc = new Scanner(System.in);
-
 
 System.out.print("Felhasználónév: ");
 String userstr = sc.nextLine();
@@ -40,7 +38,8 @@ System.out.print("Hely: ");
 String locationstr = sc.nextLine();
 
 sc.close();
-int iSiker = 0;
+
+int iSuccess = 0;
 try {
     Store DatasList = new Store(userstr,passwordstr, locationstr );
     FileWriter fileWriter = new FileWriter("Datas.txt");
@@ -49,18 +48,15 @@ try {
     if(!DatasList.Locationretrival()) { printWriter.print(DatasList.Passwordretrieval()); }
     printWriter.print(DatasList.Location);
     printWriter.close();
-    iSiker = 1;
+    iSuccess = 1;
 } catch (IOException e) {
     System.err.println("Hiba! A fájlbaírás sikertelen. Keresse meg a fejlesztőt.");
 }
-
-if(iSiker == 1) { System.out.println("Ok. A kiírás sikeres.");  }
+if(iSuccess == 1) { System.out.println("Ok. A kiírás sikeres.");  }
 else {  System.out.println("Hiba! A kiírás sikertelen"); }}
 
 public static void nevjegy() {
     System.out.println("A késziő neve: Nagy János");
     System.out.println("A refaktoráló neve: VTG alias Varas-Tóth Gergő");
     }
-
-
 }
