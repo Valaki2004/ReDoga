@@ -41,13 +41,16 @@ sc.close();
 
 int iSuccess = 0;
 try {
+    
     Store DatasList = new Store(userstr,passwordstr, locationstr );
     FileWriter fileWriter = new FileWriter("Datas.txt");
     PrintWriter printWriter = new PrintWriter(fileWriter);
-    printWriter.print(DatasList.User);
-    if(!DatasList.Locationretrival()) { printWriter.print(DatasList.Passwordretrieval()); }
-    printWriter.print(DatasList.Location);
+    printWriter.println("Felhasználó név: " + DatasList.User);
+    printWriter.println("Felhasználó jelszava: " + DatasList.Password);
+    printWriter.println("Felhasználó helye: " + DatasList.Location);
+    printWriter.println();
     printWriter.close();
+    if(!DatasList.Locationretrival()) { printWriter.print(DatasList.Passwordretrieval()); }
     iSuccess = 1;
 } catch (IOException e) {
     System.err.println("Hiba! A fájlbaírás sikertelen. Keresse meg a fejlesztőt.");

@@ -31,7 +31,7 @@ public class Store {
         return Password;
     }
     public boolean Locationretrival() {
-        if(this.Password == "") {
+        if(this.Location == "") {
             return true;
         }else {
             return false;
