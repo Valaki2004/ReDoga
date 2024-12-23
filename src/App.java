@@ -24,46 +24,43 @@ import java.util.Scanner;
 public class App {
 public static void main(String[] args) {
 nevjegy();
-//Fejrész kiírása
+
 System.out.println("Jelszavak");
-//Verzió kiírása
 System.out.println("Verzió: 0.0.1");
 
-//Az a objektummal kérhetünk be a konzolról
+
 Scanner sc = new Scanner(System.in);
 
+
 System.out.print("Felhasználónév: ");
-// A b változó tárolja a jelszót
-String passwordstr = sc.nextLine();
+String userstr = sc.nextLine();
 System.out.print("Jelszó: ");
-String locationstr = sc.nextLine();
+String passwordstr = sc.nextLine();
 System.out.print("Hely: ");
-String 
+String locationstr = sc.nextLine();
+
 sc.close();
 int iSiker = 0;
 try {
-    /* 
-    A jelszó, a felhasználónév és a 
-    használati helye a passList 
-    objektumban van tárolva            
-    */
-    Store passList = new Store(passwordstr, locationstr );
-    FileWriter f = new FileWriter("pass.txt");
-    PrintWriter pwr = new PrintWriter(f);
-    pwr.print(passList.a);
-    if(!passList.hollow()) { pwr.print(passList.retrieval()); }
-    pwr.print(passList.place);
-    pwr.close();
+    Store DatasList = new Store(userstr,passwordstr, locationstr );
+    FileWriter fileWriter = new FileWriter("Datas.txt");
+    PrintWriter printWriter = new PrintWriter(fileWriter);
+    printWriter.print(DatasList.User);
+    if(!DatasList.Locationretrival()) { printWriter.print(DatasList.Passwordretrieval()); }
+    printWriter.print(DatasList.Location);
+    printWriter.close();
     iSiker = 1;
 } catch (IOException e) {
     System.err.println("Hiba! A fájlbaírás sikertelen. Keresse meg a fejlesztőt.");
 }
 
-if(iSiker == 1) { System.out.println("Ok. A kiírás sikeres.");  }else {  System.out.println("Hiba! A kiírás sikertelen"); }
-
-}
+if(iSiker == 1) { System.out.println("Ok. A kiírás sikeres.");  }
+else {  System.out.println("Hiba! A kiírás sikertelen"); }}
 
 public static void nevjegy() {
-System.out.println("Nagy János");
-}
+    System.out.println("A késziő neve: Nagy János");
+    System.out.println("A refaktoráló neve: VTG alias Varas-Tóth Gergő");
+    }
+
+
 }
