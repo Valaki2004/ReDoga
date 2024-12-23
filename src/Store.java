@@ -8,40 +8,30 @@
 * Licenc: MIT
 */
 
-//Itt következik a Store osztály
+/*
+* File: App.java
+* Refaktorálva: Varas-Tóth Gergő
+* Class: Szoft II/I/N
+* Date: 2024-12-23
+* Github: https://github.com/valaki2004
+*/
+
 public class Store {
     
-    /* 
-    A user adattag 
-    */
-    String a;
+    String User;
+    String Password;
+    String Location;
     
-    /* 
-    A pass adattag 
-    */
-    String pass;
-    
-    /* 
-    A place adattag 
-    */
-    String place;
-    
-    //Konstruktor
-    public Store(String a, String pass, String place) {
-        //Előkészítjük az adattagokat
-        this.a = a;
-        this.pass = pass;
-        this.place = place;
-    }//A konstruktor vége
-    
-    //Visszaadja a jelszót
-    public String retrieval() {
-        return pass;
-    }//A retrieval vége
-    
-    //Visszaadja a helyet
-    public boolean hollow() {
-        if(this.pass == "") {
+    public Store(String user, String password, String location) {
+        this.User = user;
+        this.Password = password;
+        this.Location = location;
+    }
+    public String Passwordretrieval() {
+        return Password;
+    }
+    public boolean Locationretrival() {
+        if(this.Password == "") {
             return true;
         }else {
             return false;

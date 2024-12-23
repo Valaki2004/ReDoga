@@ -8,6 +8,14 @@
 * Licenc: MIT
 */
 
+/*
+* File: App.java
+* Refaktorálva: Varas-Tóth Gergő
+* Class: Szoft II/I/N
+* Date: 2024-12-23
+* Github: https://github.com/valaki2004
+*/
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,16 +30,16 @@ System.out.println("Jelszavak");
 System.out.println("Verzió: 0.0.1");
 
 //Az a objektummal kérhetünk be a konzolról
-Scanner a = new Scanner(System.in);
+Scanner sc = new Scanner(System.in);
 
 System.out.print("Felhasználónév: ");
 // A b változó tárolja a jelszót
-String b = a.nextLine();
+String passwordstr = sc.nextLine();
 System.out.print("Jelszó: ");
-String c = a.nextLine();
+String locationstr = sc.nextLine();
 System.out.print("Hely: ");
-String d = a.nextLine();
-a.close();
+String 
+sc.close();
 int iSiker = 0;
 try {
     /* 
@@ -39,7 +47,7 @@ try {
     használati helye a passList 
     objektumban van tárolva            
     */
-    Store passList = new Store(b, c, d);
+    Store passList = new Store(passwordstr, locationstr );
     FileWriter f = new FileWriter("pass.txt");
     PrintWriter pwr = new PrintWriter(f);
     pwr.print(passList.a);
